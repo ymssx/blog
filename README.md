@@ -1,5 +1,16 @@
 # card.js
 
+# v2.0
+
+2.0版本正在开发中
+
+## 新特性：
+* 更好的扩展性。v2.0更像是一个canvas绘制框架，你可以利用这一套模式轻松地自定义你的模板。
+* 局部绘制。数据更新引起的卡图重绘将仅仅发生在局部，大大提升了渲染速度。
+* 交互式。v2.0允许用户与卡图更有丰富的交互。
+
+# v1.0
+
 <img src="https://img.shields.io/npm/v/ygo-card"/>
 <img src="https://img.shields.io/npm/l/ygo-card"/>
 <img src="https://img.shields.io/badge/yami-%40qq.com-lightgrey"/>
