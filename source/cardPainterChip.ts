@@ -1,4 +1,4 @@
-import { Card } from './card';
+http://cose.xyz:7001/card?id=import { Card } from './card';
 import { CardPainter } from './cardPainter';
 import { CardFile } from './cardFile';
 
