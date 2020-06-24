@@ -1,8 +1,8 @@
-http://cose.xyz:7001/card?id=import { Card } from './card';
-import { CardPainter } from './cardPainter';
-import { CardFile } from './cardFile';
+import Card from './card';
+import CardPainter from './cardPainter';
+import CardFile from './cardFile';
 
-export class CardPainterChip {
+export default class CardPainterChip {
   card: Card;
   painter: CardPainter;
   fileManage: CardFile;
@@ -10,6 +10,7 @@ export class CardPainterChip {
   relyData: any[];
   fileMap: object;
   paintControl: any;
+
   constructor(painter: CardPainter, relyData: any[]) {
     this.card = painter.card;
     this.painter = painter;
@@ -22,14 +23,13 @@ export class CardPainterChip {
     painter.subscribe(relyData, this);
   }
 
-
   getData(): object {
     return this.painter.reqData(this.relyData);
   }
 
-
-  async getFiles() {}
-
+  async getFiles(): Promise<object> {
+    return {};
+  }
 
   async update() {
     const data = this.getData();
@@ -37,17 +37,26 @@ export class CardPainterChip {
     this.distributeRender(data, files);
   }
 
-
   distributeRender(data: object, files: object) {
-    if (this.paintControl) {
-      window.cancelAnimationFrame(this.paintControl);
+    // 区分在WINDOW和NODE环境
+    // WINDOW环境下进行异步绘制
+    // NODE环境下直接绘制
+    if (this.card.ENV === 'WINDOW') {
+      this.asyncRender(data, files);
+    } else {
+      this.render(data, files);
     }
-
-    window.requestAnimationFrame(() => {
-      this.render();
-    })
   }
 
+  asyncRender(data: object, files: object) {
+      if (this.paintControl) {
+        window.cancelAnimationFrame(this.paintControl);
+      }
 
-  render() {}
+      window.requestAnimationFrame(() => {
+        this.render(data, files);
+      })
+  }
+
+  render(data: object, files: object) {}
 }
