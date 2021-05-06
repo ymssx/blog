@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Brush.js -- 用canvas代替HTML | YAMI</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/cherry-blossom.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/logo192.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="MVC模式的canvas开发体验">
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.cef272c5.css" as="style"><link rel="preload" href="/assets/js/app.e077583c.js" as="script"><link rel="preload" href="/assets/js/4.ced6555c.js" as="script"><link rel="preload" href="/assets/js/6.9fb1f982.js" as="script"><link rel="preload" href="/assets/js/10.cff7a398.js" as="script"><link rel="preload" href="/assets/js/24.5b25cfac.js" as="script"><link rel="preload" href="/assets/js/14.7f98be28.js" as="script"><link rel="prefetch" href="/assets/js/1.0d399d76.js"><link rel="prefetch" href="/assets/js/11.33b08877.js"><link rel="prefetch" href="/assets/js/12.fb216878.js"><link rel="prefetch" href="/assets/js/13.dce0661f.js"><link rel="prefetch" href="/assets/js/15.87742255.js"><link rel="prefetch" href="/assets/js/16.45594759.js"><link rel="prefetch" href="/assets/js/17.0778f4c2.js"><link rel="prefetch" href="/assets/js/18.bb7a0e4e.js"><link rel="prefetch" href="/assets/js/19.b3926ee0.js"><link rel="prefetch" href="/assets/js/2.e6644f70.js"><link rel="prefetch" href="/assets/js/20.de727b42.js"><link rel="prefetch" href="/assets/js/21.5f4c8dcb.js"><link rel="prefetch" href="/assets/js/22.9694adc7.js"><link rel="prefetch" href="/assets/js/23.8170e8a5.js"><link rel="prefetch" href="/assets/js/25.9d59694a.js"><link rel="prefetch" href="/assets/js/26.1fa05ef2.js"><link rel="prefetch" href="/assets/js/27.5338f7d6.js"><link rel="prefetch" href="/assets/js/28.aa8b68ae.js"><link rel="prefetch" href="/assets/js/29.483e6136.js"><link rel="prefetch" href="/assets/js/30.95b668d1.js"><link rel="prefetch" href="/assets/js/31.ac1a7510.js"><link rel="prefetch" href="/assets/js/32.224ed188.js"><link rel="prefetch" href="/assets/js/33.e6702315.js"><link rel="prefetch" href="/assets/js/34.5248b5c3.js"><link rel="prefetch" href="/assets/js/35.84ea2443.js"><link rel="prefetch" href="/assets/js/36.94466edf.js"><link rel="prefetch" href="/assets/js/37.cbd2b1ee.js"><link rel="prefetch" href="/assets/js/38.d8aa883e.js"><link rel="prefetch" href="/assets/js/39.ed28eb8c.js"><link rel="prefetch" href="/assets/js/40.6694f4ac.js"><link rel="prefetch" href="/assets/js/5.699ce86b.js"><link rel="prefetch" href="/assets/js/7.96643653.js"><link rel="prefetch" href="/assets/js/8.40b7d268.js"><link rel="prefetch" href="/assets/js/9.b8a54bd0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cef272c5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/cherry-blossom.png" alt="YAMI" class="logo"> <span class="site-name can-hide">YAMI</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/ymssx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/ymssx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/ymssx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/ymssx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/" aria-current="page" class="sidebar-link">主页</a></li><li><a href="/me/" class="sidebar-link">个人介绍</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>人工智能</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/2020/08/17/baton/" class="sidebar-link">前端请求合并方案的思考</a></li><li><a href="/2020/12/15/ip/" class="sidebar-link">无需公网ip进行外网访问的方案</a></li><li><a href="/2020/12/17/time/" class="sidebar-link">时间格式化小工具 time-oral</a></li><li><a href="/2020/12/18/emoji/" class="sidebar-link">让emoji固定风格</a></li><li><a href="/2020/05/11/brush/" aria-current="page" class="active sidebar-link">Brush.js -- 用canvas代替HTML</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/2020/05/11/brush/#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/2020/05/11/brush/#使用" class="sidebar-link">使用</a></li><li class="sidebar-sub-header"><a href="/2020/05/11/brush/#核心概念" class="sidebar-link">核心概念</a></li><li class="sidebar-sub-header"><a href="/2020/05/11/brush/#深入原理" class="sidebar-link">深入原理</a></li></ul></li><li><a href="/2020/12/16/cardjs/" class="sidebar-link">Card.js 文档</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>树莓派</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>生活</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div><div class="doc-info"><span class="avatar el-avatar el-avatar--circle" style="height:84px;width:84px;line-height:84px;"><img src="/avatar.jpg" style="object-fit:cover;"></span> <div class="info"><h1>Brush.js -- 用canvas代替HTML</h1> <time>2020年5月12日 02:00</time> <span class="city"># 湖北-荆州</span></div></div> <div class="tags"><span class="tag el-tag el-tag--small el-tag--light" style="background-color:#f5f5f5;">
+      canvas
+    </span><span class="tag el-tag el-tag--small el-tag--light" style="background-color:#f5f5f5;">
+      javascript
+    </span></div></div> <p>Brush.js是一个绘制canvas的JavaScript框架。</p> <ul><li><p><strong>组件化</strong> Canvas组件化一直是一件困难的事情。基于Brush.js，你可以轻松的实现组件化，方便的在项目中复用。更进一步的，你可以沉淀出属于自己的组件资产。</p></li> <li><p><strong>高性能</strong> Brush对绘图的细节做了大量优化，我们会尽可能的做局部渲染。同时组件化的优点使得每次渲染都不需要全量更新。这是一套Canvas开发的最佳实践。</p></li> <li><p><strong>响应式</strong> Brush是数据驱动的，当数据更新时，Brush会自动更新相关的部分组件。在设计好组件的绘图逻辑之后，你只需要关注于数据逻辑部分。</p></li></ul> <br> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> <!----> 安装</h2> <h3 id="使用-script-引用"><a href="#使用-script-引用" class="header-anchor">#</a> 使用 <code>&lt;script&gt;</code> 引用</h3> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>root<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>xxx/brush.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><br> <h2 id="使用"><a href="#使用" class="header-anchor">#</a> <!----> 使用</h2> <p>我们以制作一个俄罗斯方块游戏为例。首先你需要创建一个Brush实例，并且传入尺寸 w 和 h 以及绑定的元素root。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> brush <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Brush</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  w<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+  h<span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+  root<span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 如果后面的设置一切就绪，使用render方法就可以绘制</span>
+<span class="token comment">// brush.render()</span>
+</code></pre></div><p>为了书写简便，在Brush中的宽度width、高度height、左距离left、上距离top分别被简化成了w、h、x、y。</p> <br> <h3 id="图层"><a href="#图层" class="header-anchor">#</a> 图层</h3> <p>在Brush中存在图层的概念。从本质上，一个图层就是一个独立的canvas元素，这是为了应对复杂的绘图场景，各个图层在绘制时保持互相不干扰，同时也可以使用webwoker多线程渲染进行优化。</p> <p>总之，一个图层是一个绘制的基本单位。我们首先需要创建一个图层。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> layer <span class="token operator">=</span> brush<span class="token punctuation">.</span><span class="token function">createLayer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  style<span class="token operator">:</span> <span class="token punctuation">{</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">'white'</span><span class="token punctuation">,</span>
+    w<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+    h<span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+    x<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 默认是0</span>
+    y<span class="token operator">:</span> <span class="token number">0</span>  <span class="token comment">// 默认是0</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 根级组件</span>
+  el<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Container</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    w<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+    h<span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">'#ddd'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>你需要为图层指定style样式，如果不指定，那么图层将会默认占满整个Brush画板，背景默认为透明。</p> <p>你可能注意到了，我们设置了一个el属性，同时指定了一个入口组件，图层将会以这个组件开始，逐渐渲染整个组件树。当然，你也可以指定多个入口组件，通过数组传入多个组件即可。</p> <br> <h3 id="组件"><a href="#组件" class="header-anchor">#</a> 组件</h3> <p>在Brush中，<strong>一切皆是组件</strong>，组件是构成整个复杂图像的基本单位。在组件中，我们将数据层和视图层进行了分离，在设置好了绘制模板之后，你只需要专注于数据业务逻辑即可。同时，每个组件将维护一个属于自己的offscreenCanvas，用于将自己的视图缓存下来，这也是Brush高效的原因之一。</p> <p>Brush组件和React组件长得非常相似，本框架吸收了许多React的思想。因此，对于React的使用者来说，你可能使用起来非常熟悉。</p> <p>我们首先来创建一个方块组件，为后面的俄罗斯方块游戏打下基础。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Box</span> <span class="token keyword">extends</span> <span class="token class-name">BrushElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 组件的默认属性</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>defaultProps <span class="token operator">=</span> <span class="token punctuation">{</span>
+      w<span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+      h<span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+      border<span class="token operator">:</span> <span class="token number">5</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 绘图的部分放在这里</span>
+  <span class="token function">paint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span>fillStyle <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>bg<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> border <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>border<span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * 以下四个属性的两种获取方法是等同的
+     * this.w === this.props.w
+     * this.h === this.props.h
+     * this.x === this.props.x
+     * this.y === this.props.y
+     * 这是个简单的语法糖，简化对常用属性的访问
+     * 另外，brush支持使用百分比进行布局
+     */</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span><span class="token function">fillRect</span><span class="token punctuation">(</span>border <span class="token punctuation">,</span> border<span class="token punctuation">,</span> <span class="token string">'95%'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>h<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>如何在组件中引用其它的组件呢？我们以方块“田”为例。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Tian</span> <span class="token keyword">extends</span> <span class="token class-name">BrushElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>defaultProps <span class="token operator">=</span> <span class="token punctuation">{</span>
+      w<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+      h<span class="token operator">:</span> <span class="token number">100</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/**
+   * 指定需要用到的子组件
+   * 一定要命名为elMap，不支持自定义
+   * 组件实例名可以自定义，访问方式为: this.el.box
+   */</span>
+  elMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+    box<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      bg<span class="token operator">:</span> <span class="token string">'black'</span><span class="token punctuation">,</span>
+      border<span class="token operator">:</span> <span class="token number">5</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token function">paint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 注意是el不是elMap</span>
+    <span class="token comment">// 可以对子组件传参</span>
+    <span class="token comment">// 在之后可以使用rotate、scale等方法进行后处理</span>
+    <span class="token comment">// 最后一定要调用done方法表示结束</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span><span class="token function">box</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      x<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      y<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span><span class="token function">box</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      x<span class="token operator">:</span> <span class="token number">50</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span><span class="token function">box</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      x<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      y<span class="token operator">:</span> <span class="token number">50</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span><span class="token function">box</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      x<span class="token operator">:</span> <span class="token number">50</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在我们有了一个“田”字组件，接下来创建一个容器吧！
+我们通过一些数据让方块动起来。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Container</span> <span class="token keyword">extends</span> <span class="token class-name">BrushElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 设置内部状态</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      i<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  elMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+    tian<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Tian</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      x<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      y<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 生命周期钩子，在组件被初始化后执行函数</span>
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 每隔一秒将i自增</span>
+    <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        i<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>i <span class="token operator">+</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">paint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 我们需要先清除一下画布</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span><span class="token function">tian</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      y<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>i <span class="token operator">*</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>怎么样，是不是“有那味了”，一切都和react那么像，你只需要通过setState更新数据，Brush会自动对相关组件进行重绘，十分简单易用。</p> <p>接下来，你需要按下启动键，组件树就开始绘制了。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>brush<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><br> <h2 id="核心概念"><a href="#核心概念" class="header-anchor">#</a> <!----> 核心概念</h2> <h3 id="组件-2"><a href="#组件-2" class="header-anchor">#</a> 组件</h3> <p>组件是Brush中核心的概念，你只需要将目标细化分解成一个个组件，就能轻松的构建复杂的图像。</p> <p>Brush的每一个组件都维护了一个私有的offscreenCanvas，用于保存自己的视图状态，只有在必要更新时，组件才会进行重绘。</p> <p>组件允许嵌套其它子组件，你可以在绘制函数<code>paint</code>中指定子组件的使用时机，你也可以在组件外部进行指定。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token keyword">extends</span> <span class="token class-name">BrushElement</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 指定你需要的组件们</span>
+  elMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+    box<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// ... 初始化参数</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">paint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//... 绘制逻辑</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span>box<span class="token punctuation">.</span><span class="token function">paint</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// ... 传递参数</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>注意，<code>this.el.name</code>获取的是一个控制器函数，而不是组件实例本身。其功能是传递新的参数并通知更新，在子组件绘制之后，链式调用<code>done</code>方法采集其canvas内容。而<code>this.elMap.name</code>才能直接获取到组件实例本身。</p> <p>在paint之后你可以使用rotate、scale、translate、transform、opacity等方法对子组件进行后处理：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">this</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span>box<span class="token punctuation">.</span><span class="token function">paint</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">translate</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">scale</span><span class="token punctuation">(</span><span class="token number">1.2</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>你可能需要一个现成的组件上进行补充，或者以一个组件为背景快速创建图形，你可以在外部指定子组件。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token keyword">extends</span> <span class="token class-name">BrushElement</span> <span class="token punctuation">{</span>
+  elMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    box1<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    box2<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+  <span class="token function">paint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span><span class="token function">box</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// ... 传递参数</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>elMap<span class="token punctuation">.</span>box1<span class="token punctuation">,</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>elMap<span class="token punctuation">.</span>box2
+    <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><br> <h3 id="绘图扩展"><a href="#绘图扩展" class="header-anchor">#</a> 绘图扩展</h3> <p>（进行中）Brush对canvas绘制API进行了一系列的补充，其简化了绘制复杂度，扩增了一系列常用的绘图功能，同时你也拥有完全的原生canvas API。</p> <p><strong>Brush在绘制时允许你使用百分比、vw、vh等实用的动态参数。</strong></p> <h4 id="ctx-rect-x-y-w-h"><a href="#ctx-rect-x-y-w-h" class="header-anchor">#</a> <code>ctx.rect(x, y, w, h)</code></h4> <p>绘制矩形</p> <h4 id="ctx-circle-x-y-r"><a href="#ctx-circle-x-y-r" class="header-anchor">#</a> <code>ctx.circle(x, y, r)</code></h4> <p>绘制圆</p> <h4 id="ctx-plot-x-number-y-number"><a href="#ctx-plot-x-number-y-number" class="header-anchor">#</a> <code>ctx.plot(X: number[], Y: number[])</code></h4> <p>（计划）快速绘制折线图</p> <h4 id="ctx-smooth-x-number-y-number"><a href="#ctx-smooth-x-number-y-number" class="header-anchor">#</a> <code>ctx.smooth(X: number[], Y: number[])</code></h4> <p>（计划）通过三次样条插值快速绘制曲线</p> <p>... 待补充</p> <br> <h3 id="动画"><a href="#动画" class="header-anchor">#</a> 动画</h3> <p>Brush的动画是数据驱动的，你只需要指定你的目标state和过渡时间(ms)，我们会自动平滑地绘制过渡动画（仅支持数值）。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>BrushElement<span class="token punctuation">.</span><span class="token function">smoothState</span><span class="token punctuation">(</span>targetState<span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li><p><strong>targetState</strong> 需要渐变的目标值，会自动渐近地改变state中对应的数值部分。</p></li> <li><p><strong>delay</strong> 动画过渡时间。</p></li></ul> <p>smoothState的返回值是一个Promise对象，你可以在之后链式调用其它动画。</p> <p>让我们升级一下上述的容器，让它的移动更平滑！</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Container</span> <span class="token keyword">extends</span> <span class="token class-name">BrushElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 设置内部状态</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      i<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  elMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+    tian<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Tian</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      x<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      y<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 每隔一秒将i自增</span>
+    <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 300ms的过渡动画</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">smoothState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        i<span class="token operator">:</span> i<span class="token operator">++</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">paint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>el<span class="token punctuation">.</span><span class="token function">tian</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      y<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>i <span class="token operator">*</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>也许你需要数据<strong>永不停息</strong>地增长，你可以使用<code>infiniteState</code>方法，传入一个增长速度，我们会按照这个速度进行平滑的增加。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>BrushElement<span class="token punctuation">.</span><span class="token function">infiniteState</span><span class="token punctuation">(</span>stepState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>函数返回一个控制器，你可以使用stop、start进行暂停和启动。</p> <p>例如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> control <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">infiniteState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  i<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token comment">// 每秒平滑地增加10</span>
+  j<span class="token operator">:</span> <span class="token punctuation">{</span>
+    k<span class="token operator">:</span> <span class="token number">1</span> <span class="token comment">// 每秒平滑地增加1</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  control<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span>
+</code></pre></div><p>或者你需要组件没有时间限制的运动，你可以使用stepState，我们会尽可能的在每次电话帧之前修改state。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>BrushElement<span class="token punctuation">.</span><span class="token function">stepState</span><span class="token punctuation">(</span>stepState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>函数返回一个控制器，你可以使用stop、start进行暂停和启动。</p> <p>例如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> control <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">stepState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  i<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token comment">// 每秒平滑地增加10</span>
+  j<span class="token operator">:</span> <span class="token punctuation">{</span>
+    k<span class="token operator">:</span> <span class="token number">1</span> <span class="token comment">// 每秒平滑地增加1</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  control<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span>
+</code></pre></div><p>你也可以传入一个函数</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> control <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">stepState</span><span class="token punctuation">(</span><span class="token parameter">state</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    x<span class="token operator">:</span> state<span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>当然了，你可以自定义你自己的动画，在通常我们使用requestAnimationFrame来请求动画帧，在Brush中，请使用nextFrame方法。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> <span class="token function-variable function">animation</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>i<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token comment">// 如果你希望递归调用动画，请在末尾加上nextFrame</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">nextFrame</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">nextFrame</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><br> <h3 id="事件"><a href="#事件" class="header-anchor">#</a> 事件</h3> <p>Brush中的父子组件通信可以使用props进行。
+...</p> <h3 id="界面交互"><a href="#界面交互" class="header-anchor">#</a> 界面交互</h3> <p>Brush允许你轻松的创建界面交互效果，你只需要在组件中设置鼠标事件回调函数即可。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token keyword">extends</span> <span class="token class-name">BrushElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> i<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addEvent</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        i<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>i <span class="token operator">+</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>支持的鼠标事件有 <code>click | over | in | out</code></p> <p>同时，你也可以随时更改鼠标样式</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">changeCursor</span><span class="token punctuation">(</span><span class="token string">'pointer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Brush组件中的事件同样存在事件冒泡，在捕获到最终的目标组件之后，事件会反向向父级传播，直到传播到根级组件。</p> <h3 id="store"><a href="#store" class="header-anchor">#</a> store</h3> <br> <h2 id="深入原理"><a href="#深入原理" class="header-anchor">#</a> <!----> 深入原理</h2> <h3 id="组件树"><a href="#组件树" class="header-anchor">#</a> 组件树</h3> <div align="center"><img height="400px" src="/assets/img/tree.bf9188fd.svg"></div><br> <p>父子组件之间是一对多的关系，每个子组件同时拥有自己的子组件，最终形成了一个组件树。同时，每一个组件都自行维护了一个属于自己的offscreenCanvas，只有在有必要更新时，才会自行进行重绘，更新自己的canvas。</p> <p>也就是说，当一个组件在重绘的时候，自己的每一个子组件都会根据情况（比如props是否有变动、变动属性是否被依赖、自身状态是否过期等）判断自己是否需要重绘，如果不需要则直接返回自己的canvas内容，而父级组件本身只需要拿到这些内容进行绘制。</p> <div align="center"><img width="80%" src="/assets/img/rendercompare.5637ea46.svg"></div><br> <p>这样一来，比起将所有的组件都无差别的进行重绘，Brush只需要对某一条路线进行重绘就可以了，时间复杂度从O(n)降低到了O(log(n)),这也就是为什么Brush高效的原因。</p> <br> <h3 id="更新策略"><a href="#更新策略" class="header-anchor">#</a> 更新策略</h3> <p>Brush的更新策略非常值得一说。早期在设计Brush的架构的时候，Brush采用的是一种自下向上、反向传播通知的更新策略。</p> <p>首先要明确的一点是，父组件完全依赖于子组件的内容，如果子组件的内容不是最新的，那么父级组件的绘制是完全无效的。所以Brush早期的策略是：</p> <ol><li><p>每个组件都维护一个内部状态state，当使用setState更新数据时，Brush使用requestAnimationFrame将绘制函数放到异步队列，同时多次数据更新会取消之前的绘制任务，这样一来，可以只在下一个动画帧前仅执行一次绘制函数。</p></li> <li><p>当子组件更新时，子组件会进行自我重绘，在那之后反向通知父组件，父组件根据所有子组件当前的内容进行重绘，接着继续向上传播，直到根级组件被完全更新。</p></li></ol> <p>这样的策略看起来十分完美，但是实际上存在几个问题。</p> <blockquote><p>一个组件只有在其被更新完毕之后才能进行反向传播，因为父级组件提前进行更新是没有意义的。由于绘制任务是异步的，一个动画帧仅能执行一次，也就是说，只有等到一个动画帧绘制完毕之后才会通知父级进行更新，一帧仅能反向传播一个单位。</p></blockquote> <p>这会带来什么问题呢？我们假设在组件树的不同部位的两个子组件A、B同时（或者说在同一个主任务中）进行了数据更新，其最近的公共父组件为F。由于A、B在组件树里面的深度不一样，而反向传播的速度为 1层/帧，也就是说A、B到达父组件的顺序不一样！尽管A、B是同时更新的。最终父级组件F被分别更新了2次，这就带来了性能浪费。</p> <p>父级组件非常依赖子组件的内容，所以渲染顺序十分重要，如果在子组件内容不是最新时，父组件进行绘制是完全无效的。由于子组件的反向传播时间取决于在树中的深度，所以绘制顺序难以控制。</p> <p>同时，当一个组件树的路径非常长时，可能会导致需要传播许久才能达到根节点。</p> <p>那么如果取消对绘制函数的异步处理呢？假设父子组件同时进行更新，父级组件会进行两次绘制，同时在子组件未更新时父组件的绘制是浪费的。所以我们需要转变思路，改为从正向传播更新，最终Brush采取了下面的策略。</p> <br> <h4 id="brush的策略"><a href="#brush的策略" class="header-anchor">#</a> Brush的策略</h4> <div align="center"><img width="80%" src="/assets/img/updating.c89e82a6.svg"></div><br> <ol><li><p>每个子组件更新数据之后，直接向根级元素（图层）发送更新请求，图层收集来自各个组件的更新请求，并且把来自于同一个组件的请求进行去重，只保留一个。</p></li> <li><p>图层每次收到更新请求后，利用requestAnimationFrame执行一个异步函数（见3），多次收到更新将会取消异步任务，重新执行异步函数。</p></li></ol> <div align="center"><img width="40%" src="/assets/img/overdue.003c0013.svg"></div><br> <ol start="3"><li><p>在下一个动画帧之前，图层分析所有发起更新请求的子组件，得到从根组件到请求子组件的<strong>更新链</strong>，并且将更新链上所有的组件标记为 <strong>过期</strong>。</p></li> <li><p>由根组件开始向下发起渲染请求，每个组件在绘制时向子组件<strong>索要</strong>最新的canvas内容。如果子组件的状态为未过期，且props未发生有效变化，那么直接向父组件交付自己的canvas，不进行重绘；如果子组件已过期，那么就会强制进行重绘，同时也向自己的子组件索要最新内容，对于每一个子组件都重复上述的内容。这样一来，最终所有的组件都变成了最新状态。</p></li></ol> <p>一次整体的更新是在一次主任务中执行的，从上至下向子组件索要更新，这能保证每个组件的渲染顺序都是正确的，且最多只被绘制了一次，直接跳过无需更新的组件，所有问题都迎刃而解。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/2020/12/18/emoji/" class="prev">
+        让emoji固定风格
+      </a></span> <span class="next"><a href="/2020/12/16/cardjs/">
+        Card.js 文档
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----><div></div></div></div>
+    <script src="/assets/js/app.e077583c.js" defer></script><script src="/assets/js/4.ced6555c.js" defer></script><script src="/assets/js/6.9fb1f982.js" defer></script><script src="/assets/js/10.cff7a398.js" defer></script><script src="/assets/js/24.5b25cfac.js" defer></script><script src="/assets/js/14.7f98be28.js" defer></script>
+  </body>
+</html>

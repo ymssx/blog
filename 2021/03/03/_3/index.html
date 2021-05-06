@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>骨架检测综述 | YAMI</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/cherry-blossom.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/logo192.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="分享我的日常想法">
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.cef272c5.css" as="style"><link rel="preload" href="/assets/js/app.e077583c.js" as="script"><link rel="preload" href="/assets/js/4.ced6555c.js" as="script"><link rel="preload" href="/assets/js/20.de727b42.js" as="script"><link rel="preload" href="/assets/js/10.cff7a398.js" as="script"><link rel="preload" href="/assets/js/14.7f98be28.js" as="script"><link rel="prefetch" href="/assets/js/1.0d399d76.js"><link rel="prefetch" href="/assets/js/11.33b08877.js"><link rel="prefetch" href="/assets/js/12.fb216878.js"><link rel="prefetch" href="/assets/js/13.dce0661f.js"><link rel="prefetch" href="/assets/js/15.87742255.js"><link rel="prefetch" href="/assets/js/16.45594759.js"><link rel="prefetch" href="/assets/js/17.0778f4c2.js"><link rel="prefetch" href="/assets/js/18.bb7a0e4e.js"><link rel="prefetch" href="/assets/js/19.b3926ee0.js"><link rel="prefetch" href="/assets/js/2.e6644f70.js"><link rel="prefetch" href="/assets/js/21.5f4c8dcb.js"><link rel="prefetch" href="/assets/js/22.9694adc7.js"><link rel="prefetch" href="/assets/js/23.8170e8a5.js"><link rel="prefetch" href="/assets/js/24.5b25cfac.js"><link rel="prefetch" href="/assets/js/25.9d59694a.js"><link rel="prefetch" href="/assets/js/26.1fa05ef2.js"><link rel="prefetch" href="/assets/js/27.5338f7d6.js"><link rel="prefetch" href="/assets/js/28.aa8b68ae.js"><link rel="prefetch" href="/assets/js/29.483e6136.js"><link rel="prefetch" href="/assets/js/30.95b668d1.js"><link rel="prefetch" href="/assets/js/31.ac1a7510.js"><link rel="prefetch" href="/assets/js/32.224ed188.js"><link rel="prefetch" href="/assets/js/33.e6702315.js"><link rel="prefetch" href="/assets/js/34.5248b5c3.js"><link rel="prefetch" href="/assets/js/35.84ea2443.js"><link rel="prefetch" href="/assets/js/36.94466edf.js"><link rel="prefetch" href="/assets/js/37.cbd2b1ee.js"><link rel="prefetch" href="/assets/js/38.d8aa883e.js"><link rel="prefetch" href="/assets/js/39.ed28eb8c.js"><link rel="prefetch" href="/assets/js/40.6694f4ac.js"><link rel="prefetch" href="/assets/js/5.699ce86b.js"><link rel="prefetch" href="/assets/js/6.9fb1f982.js"><link rel="prefetch" href="/assets/js/7.96643653.js"><link rel="prefetch" href="/assets/js/8.40b7d268.js"><link rel="prefetch" href="/assets/js/9.b8a54bd0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cef272c5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/cherry-blossom.png" alt="YAMI" class="logo"> <span class="site-name can-hide">YAMI</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/ymssx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/ymssx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/ymssx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/ymssx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/" aria-current="page" class="sidebar-link">主页</a></li><li><a href="/me/" class="sidebar-link">个人介绍</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>人工智能</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/2020/12/15/_16/" class="sidebar-link">无监督对抗防御综述</a></li><li><a href="/2021/03/03/_3/" aria-current="page" class="active sidebar-link">骨架检测综述</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/2021/03/03/_3/#基于传统方法" class="sidebar-link">基于传统方法</a></li><li class="sidebar-sub-header"><a href="/2021/03/03/_3/#基于深度学习" class="sidebar-link">基于深度学习</a></li></ul></li><li><a href="/2021/03/04/_4/" class="sidebar-link">通道注意力机制</a></li><li><a href="/2021/05/06/mfn/" class="sidebar-link">多级预测融合骨架检测网络MFN</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>树莓派</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>生活</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div><div class="doc-info"><span class="avatar el-avatar el-avatar--circle" style="height:84px;width:84px;line-height:84px;"><img src="/avatar.jpg" style="object-fit:cover;"></span> <div class="info"><h1>骨架检测综述</h1> <time>3月4日 14:48</time> <span class="city"># 西安</span></div></div> <div class="tags"><span class="tag el-tag el-tag--small el-tag--light" style="background-color:#f5f5f5;">
+      深度学习
+    </span><span class="tag el-tag el-tag--small el-tag--light" style="background-color:#f5f5f5;">
+      骨架检测
+    </span><span class="tag el-tag el-tag--small el-tag--light" style="background-color:#f5f5f5;">
+      综述
+    </span></div></div> <h2 id="基于传统方法"><a href="#基于传统方法" class="header-anchor">#</a> 基于传统方法</h2> <p>计算图像中梯度响应强弱 以及 边缘与骨架之间位置关系</p> <h3 id="基于边缘强度图的方法"><a href="#基于边缘强度图的方法" class="header-anchor">#</a> 基于边缘强度图的方法</h3> <p>边缘强度图本身<strong>对局部纹理变化和干扰十分敏感</strong>，只在干净背景图片以及前景纹理少的图片中有效。难以应用。</p> <p><strong>Morse</strong>：灰度图像 =&gt; 高斯平滑 =&gt; 差分算子 -&gt; 边缘响应图 =&gt; 中轴响应（骨架）</p> <div class="language- extra-class"><pre class="language-text"><code>@article{Morse1994MuItiscaleMA,
+  title={MuItiscale medial analysis of medical images},
+  author={B. Morse and S. Pizer and A. Liu},
+  journal={Image Vis. Comput.},
+  year={1994},
+  volume={12},
+  pages={327-338}
+}
+</code></pre></div><p><strong>Lindeberg</strong>：改进：自适应尺度参数选取 -&gt; 高斯核尺度</p> <div class="language- extra-class"><pre class="language-text"><code>@article{Lindeberg1996EdgeDA,
+  title={Edge detection and ridge detection with automatic scale selection},
+  author={T. Lindeberg},
+  journal={Proceedings CVPR IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+  year={1996},
+  pages={465-470}
+}
+</code></pre></div><p><strong>Jang &amp; Hong</strong>：基于边缘强度的能量方程 =&gt; 最小化能量方程 -&gt; 迭代计算伪距离变换图（pseudo-distance map） =&gt; 骨架</p> <p>伪距离变换图：欧氏距离变换图的变形：再边缘强度大的地方距离值小，~小~大 -&gt; 骨架会偏移</p> <div class="language- extra-class"><pre class="language-text"><code>@article{Jang2001APM,
+  title={A pseudo-distance map for the segmentation-free skeletonization of gray-scale images},
+  author={Jeong-Hun Jang and K. Hong},
+  journal={Proceedings Eighth IEEE International Conference on Computer Vision. ICCV 2001},
+  year={2001},
+  volume={2},
+  pages={18-23 vol.2}
+}
+</code></pre></div><p><strong>Yu &amp; Bajaj</strong>：改进：扩散由边缘强度图初始化的梯度向量场 -&gt; 克服骨架偏移问题</p> <div class="language- extra-class"><pre class="language-text"><code>@inproceedings{Yu2004ASA,
+  title={A segmentation-free approach for skeletonization of gray-scale images via anisotropic vector diffusion},
+  author={Zeyun Yu and Chandrajit L. Bajaj},
+  booktitle={CVPR 2004},
+  year={2004}
+}
+</code></pre></div><h3 id="其它"><a href="#其它" class="header-anchor">#</a> 其它</h3> <p><strong>Adluru</strong>：以已知骨架为参考模板，在边缘图中通过粒子滤波的方法搜索与参数模板相似且与边缘段对称的骨架路径</p> <p>依赖边缘检测结果，不适合形变较大的物体</p> <p><strong>Stahl &amp; Wang</strong>：连接图像边缘 -&gt; 对称的闭合物体轮廓、物体的对称轴</p> <p>依赖边缘检测结果，计算复杂度高</p> <div class="language- extra-class"><pre class="language-text"><code>@article{Stahl2008GloballyOG,
+  title={Globally Optimal Grouping for Symmetric Closed Boundaries by Combining Boundary and Region Information},
+  author={J. Stahl and S. Wang},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2008},
+  volume={30},
+  pages={395-411}
+}
+</code></pre></div><p><strong>Levinstein</strong>：利用多尺度超像素（super pixel）的自然图像中轴检测算法。相邻超像素之间的颜色和纹理相似性对超像素进行聚类 -&gt; 物体部分 =&gt; 椭圆法拟合 =&gt; 连接椭圆中心 -&gt; 物体对称轴（骨架）</p> <p>不平滑、不准确</p> <div class="language- extra-class"><pre class="language-text"><code>@article{Levinshtein2009MultiscaleSP,
+  title={Multiscale Symmetric Part Detection and Grouping},
+  author={Alex Levinshtein and C. Sminchisescu and S. Dickinson},
+  journal={International Journal of Computer Vision},
+  year={2009},
+  volume={104},
+  pages={117-134}
+}
+</code></pre></div><p><strong>Trinh &amp; Kimia</strong>：以同类物体骨架的共同结构为形状模型 -&gt; 多种轮廓模板</p> <h3 id="基于机器学习方法"><a href="#基于机器学习方法" class="header-anchor">#</a> 基于机器学习方法</h3> <p>人工设计特征并不能很好的检测复杂自然图片</p> <p><strong>Tsogkas</strong>：基于学习的边缘检测方法 -&gt; 计算图像在颜色和纹理亮度上的差异性特征 =&gt; 多实例学习（MIL：multi instance learning）检测自然图像中的物体对称轴。</p> <h2 id="基于深度学习"><a href="#基于深度学习" class="header-anchor">#</a> 基于深度学习</h2> <p><strong>HED</strong>图像轮廓检测：论文认为CNN在传播时，从底层到高层会学到不同层次的信息，底层：局部纹理特征，中层：形状、线条特征，深层：物体、类别等抽象特征。而轮廓检测需要同时兼顾底层纹理以及高层语义（帮助区分前背景）。</p> <p>=&gt; 因此需要利用侧边输出side-output</p> <p>HED(Holistically-nested Edge Detection)以VGG16作为基础，在每一个池化层之前的卷积层（conv1-2，conv2-2，conv3-3，conv4-3，conv5-3）进行侧边输出。五个侧边输出的感受野分别是4、14、40、92、196。每个分支都是使用的同样的轮廓GT分别监督。</p> <p>对于轮廓检测而言，感受野不影响轮廓的提取；但是对于骨架检测而言，没有足够的感受野是无法知道某个像素是否是骨架的 --- 不识庐山真面目，只缘身在此山中。</p> <img src="/assets/img/skl_field.c2d6fceb.png" height="300"> <p><strong>FSDS</strong>：
+因此直接使用HED会使浅层的侧边输出无法检测到部分尺度的骨架，此时统一使用完全体GT是不合适的，<strong>SSO</strong>（scale-associated side-output）根据侧边输出的感受野来动态确定其感受野（将完整感受野拆分成不同尺度的几部分），侧边输出改为SSO</p> <ol><li>去掉侧边输出1（最浅的，感受野太小，没有价值）</li> <li>每一个SSO输出多个尺度相关的骨架图，同一个尺度骨架图融合时使用权重加权</li> <li>每一个SSO使用一个回归分支来预测骨架尺度</li></ol> <p><strong>SRN</strong>：侧边输出side-output在不同层有不同的感受野和不同尺度语义信息，SRN从深到浅将侧边输出的特征图进行向下连接，使高层语义信息对底层进行增强。能够很好的检测多尺度的骨架。</p> <p><strong>Hi-Fi</strong>：同时融合高层与底层的信息，相互进行增强。</p> <p><strong>DeepFlux</strong>：不再将骨架预测当作一个逐像素二分类问题，而是预测一个二维向量场（two-dimensional vector field），将每一个scene指向一个候选的骨架像素（将每一个像素与附近的骨架点联系起来） =&gt; 基于通量(flux)的骨架算法</p> <p>膨胀骨架</p> <p>结构：HED + ASPP</p> <p>优点：检测的是基于区域的向量场，其可以更好的处理大宽度的目标区域</p> <p><strong>ProMask</strong>：1. 使用高斯掩膜对骨架标签做处理，使得骨架标签平滑变粗 2. 使用vector router模块来帮助解决网络对空间位置敏感的问题，解决了骨架的连接问题。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/2020/12/15/_16/" class="prev">
+        无监督对抗防御综述
+      </a></span> <span class="next"><a href="/2021/03/04/_4/">
+        通道注意力机制
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----><div></div></div></div>
+    <script src="/assets/js/app.e077583c.js" defer></script><script src="/assets/js/4.ced6555c.js" defer></script><script src="/assets/js/20.de727b42.js" defer></script><script src="/assets/js/10.cff7a398.js" defer></script><script src="/assets/js/14.7f98be28.js" defer></script>
+  </body>
+</html>
